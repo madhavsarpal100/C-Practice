@@ -1,0 +1,2 @@
+//inputs number until 0 encountered
+//prints possible alpha code for each ..modulo 10^9+7
