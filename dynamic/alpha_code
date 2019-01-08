@@ -1,2 +1,84 @@
 //inputs number until 0 encountered
 //prints possible alpha code for each ..modulo 10^9+7
+
+#include <bits/stdc++.h>
+#include <string.h>
+using namespace std;
+
+
+void run(int * arr,int size)
+{ 
+  unsigned long long int *ans =new unsigned long long int[size+1];
+   ans[0]=ans[1]=1;
+  for(int j =2;j<=size;j++)
+  
+  {
+    
+    int prev=arr[j-2]*10+arr[j-1];
+    
+    if(prev==0){ ans[j]=0; }
+    else
+      if(prev==20){ ans[j]=ans[j-2]; }
+    else
+    if(prev>10&&prev<=26)
+    { 
+       
+          unsigned long long int a=ans[j-1];
+          unsigned long long int b=ans[j-2];
+          unsigned long long int c=1000000007;
+          ans[j]=((a%c)+(b%c))%c;
+        
+      
+    }
+    else if(prev==10){ans[j]=ans[j-2];}
+   
+    else if(prev==30){ans[j]=0;}
+     else if(prev==40){ans[j]=0;}
+     else if(prev==50){ans[j]=0;}
+     else if(prev==60){ans[j]=0;}
+     else if(prev==70){ans[j]=0;}
+     else if(prev==80){ans[j]=0;}
+     else if(prev==90){ans[j]=0;}
+    
+    
+    else{ans[j]=ans[j-1];}
+   
+  }
+ cout<<ans[size]<<endl;
+ delete[] ans;
+  
+}
+void printno(string str)             // convert string to integer array and call dynamic function run
+{
+  int size=str.length();
+  int *arr=new int[size];
+  
+  for(int i=0;i<size;i++)
+   {
+   arr[i]=(int)(str[i]-'0'); 
+   }
+  run(arr,size);
+  delete[] arr;
+}
+
+int main()
+{  
+    string str;
+  
+  
+   while(1)
+   {
+     cin>>str;
+     if(str=="0")         //if string is not zero then call function
+     {
+       break;
+     }
+     else
+     {
+     printno(str);
+     }
+   };
+  
+    return 0;
+}
+
