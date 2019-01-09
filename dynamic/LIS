@@ -1,0 +1,36 @@
+//cpp prog to calculate longest increasing subsequence
+//in the entered array
+#include <iostream>
+
+using namespace std;
+
+void lis(int * arr,int size){
+
+ int out[size]={0};
+ out[0]=1;
+ for(int i=1;i<size;i++){
+    for(int j=i-1;j>=0;j--){
+          //  cout<<i<<".."<<j<<"  ";
+        if(arr[j]<=arr[i])
+        {
+            if(out[j]>=out[i]) {out[i]=out[j]+1;/*cout<<"out "<<i<<" is "<<out[i]<<endl;*/}
+        }
+    }
+ }
+ cout<<"Max Length of incr subs : "<<out[size-1]<<endl;
+
+}
+
+int main()
+{
+    cout << "Enter Size :" ;
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+       cout << "Enter"<<i+1<<" th element : " ;
+        cin>>arr[i];
+    }
+    lis(arr,n);
+    return 0;
+}
