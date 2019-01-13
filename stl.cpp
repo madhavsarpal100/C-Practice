@@ -6,8 +6,40 @@
 #include<set>
 #include<map>
 #include<unordered_map>
+#include <queue>
 
 using namespace std;
+
+void addition()
+{
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);
+    q.push(6);
+    q.push(7);
+    q.push(8);
+    q.push(9);
+
+    cout<<"the front is : "<<q.front()<<endl;
+    cout<<"now popping .."<<endl;
+    q.pop();
+    cout<<"the front is : "<<q.front()<<endl;
+
+    cout<<"the rear is : "<<q.back()<<endl;
+    cout<<"now pushing 10 at back .."<<endl;
+    q.push(10);
+    cout<<"the rear is : "<<q.back()<<endl;
+
+    cout<<"now displaying whole list : "<<endl<<endl;
+    while(!q.empty()){
+        cout<<q.front()<<"<-";
+        q.pop();
+    }
+
+}
 
 int main()
 {
@@ -143,7 +175,7 @@ int main()
 
 
 
-
+   addition();
 
 
 
