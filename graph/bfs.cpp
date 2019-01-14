@@ -1,3 +1,6 @@
+//traverse a graph in bfs order
+//input in the form of no of vertices v and edges e
+//followed by e pairs of links bw vertces ..stored in adjacency matrix
 #include <iostream>
 #include <queue>
 using namespace std;
