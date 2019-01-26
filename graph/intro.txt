@@ -1,0 +1,22 @@
+A tree is a graph that is 1)connected and 2)acyclic
+
+In a disconnected graph..the connected sub graphs are called connected components
+
+min no edges is n-1 and max n(n-1)/2 ....for a connected graph
+
+graph implementation
+
+1)edge list(list vertices and then edge pair in array)
+-not good because search for an edge between two vertices will 
+search whole array which might have 0(n^2) edges stored.
+
+2)adjacency list (store vertices in array and each vertice has own array
+which stores its adjacent vertices )
+-checking if there is edge bw two can be upto o(n) but if adjacent 
+vertices stored in hashmap then 0(1) too.
+
+3)adjacency matrix (2d array stores if edge is there or not)
+- very fast but takes lot of storage space specially if
+sparce graph ..n^2 space no matter what where adjacency list
+could have taken less space beacuse it only stores link that exist
+
