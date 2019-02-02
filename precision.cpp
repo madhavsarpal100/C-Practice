@@ -22,6 +22,23 @@ int main() {
     std::cout.precision(9);
     cout.setf( std::ios::fixed);
     cout<<e;
-    return 0;
+   
+//for c..use 
+//printf("%.3f",f);
+
+printf("%.3f",d);
+
+//int precision=3;
+//if the decimal precision is stored in a variable then use
+
+printf("%.*f",precision,f);
+
+//the width field is similar and works for other formats too such as strings
+
+ printf("%.*s",6,"rat");
+    
+//if the var in width field is negative then the string gets left aligned rather than right
+    
+       return 0;
 }
 
