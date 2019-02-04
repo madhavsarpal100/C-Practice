@@ -1,4 +1,5 @@
 //stl basics demonstartion
+//stl is the set of c++ 's standard template classes .... a set which comprises of algorithms, containers, functions and iterators
 #include <iostream>
 #include<vector>
 #include<string>
@@ -9,6 +10,15 @@
 #include <queue>
 
 using namespace std;
+
+
+//simple template function
+
+template<class T>
+    void disp(T a,T b)
+{
+ cout<<"the sum is "<<a+b<<endl;
+}
 
 void addition()
 {
@@ -62,7 +72,12 @@ int main()
     {
         cout<<"..."<<*it<<endl;
     }
-
+    //////
+    disp(2,4);
+    disp(2.4,3.9)'
+        // a function call would first be matched with any of the normal
+        //overloaded functions..however if not possible thn the template function 
+        //would be used 
     ///////////////string///////
 
     string s ="catmouse";
